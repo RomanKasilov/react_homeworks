@@ -6,6 +6,7 @@ const Comment = ({comment}) => {
             <div>postId:{postId}</div>
             <div>name:{name}</div>
             <div>body:{body}</div>
+            <hr/>
         </div>
     );
 };

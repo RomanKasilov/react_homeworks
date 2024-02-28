@@ -1,6 +1,7 @@
 import {useForm} from "react-hook-form";
-import {users_service} from "../../../Services/users_service";
 import {joiResolver} from "@hookform/resolvers/joi";
+
+import {users_service} from "../../../Services/users_service";
 import {userFormValidator} from "../../../Validators/userFormValidator";
 
 const UsersForm = ({setUsers}) => {

@@ -1,4 +1,4 @@
-import {p_holder_api_service} from "./pholder_api_service";
+import {p_holder_api_service} from "./p_holder_api_service";
 import {urls} from "../constants/urls";
 
 const comments_services ={
