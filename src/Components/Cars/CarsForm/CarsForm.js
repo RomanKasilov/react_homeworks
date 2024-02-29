@@ -7,7 +7,7 @@ import {useEffect} from "react";
 
 const CarsForm = ({setCars, carUpdate,setCarUpdate, setReloadTrigger}) => {
     const {register, reset, handleSubmit, formState: {errors, isValid}, setValue} = useForm({
-        mode: 'onSubmit',
+        mode: 'all',
         resolver: joiResolver(carsFormValidator)
     });
     useEffect(() => {
