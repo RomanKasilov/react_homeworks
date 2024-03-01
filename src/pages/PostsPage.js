@@ -1,7 +1,18 @@
+import {Post} from "../components/posts-component/Post";
+import {useEffect, useState} from "react";
+import {useLocation} from "react-router-dom";
+import {postsService} from "../services/posts.service";
+
+
 const PostsPage = () => {
+    const [post, setPost] = useState(null)
+    const {state:{postId}} = useLocation();
+    useEffect(() => {
+        postsService.getById(postId).then(({data})=>setPost(data))
+    }, [postId]);
     return (
         <div>
-            PostsPage
+            {post && <Post post={post}/>}
         </div>
     );
 };
