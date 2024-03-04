@@ -9,8 +9,8 @@ const User = ({user}) => {
             <div>name:{name}</div>
             <button onClick={() => {
                 navigate(`users/${user.id}`,
-                    {state: user.id})
-                console.log(navigate)
+                    {state: user})
+                // console.log(navigate)
             }
             }>Details
             </button>

@@ -10,7 +10,7 @@ const PostDetails = ({postDetails}) => {
             <div>title:{title}</div>
             <div>body:{body}</div>
             <hr/>
-            <h3>Post comments</h3>
+            <h3>Post comments:</h3>
             <Comments postId = {id}/>
 
         </div>

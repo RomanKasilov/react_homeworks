@@ -1,5 +1,6 @@
-const Comment = ({comment}) => {
-    const {postId, id, name, email, body} = comment;
+const Comment = ({comment, value}) => {
+    // const {postId, id, name, email, body} = comment;
+    const {postId, id, name, email, body} = value;
 
     return (
         <div>
@@ -8,6 +9,7 @@ const Comment = ({comment}) => {
             <div>name:{name}</div>
             <div>email:{email}</div>
             <div>body:{body}</div>
+            <hr/>
         </div>
     );
 };
