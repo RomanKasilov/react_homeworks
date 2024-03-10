@@ -1,14 +1,13 @@
 import {useEffect, useState} from "react";
-import {useSearchParams} from "react-router-dom";
+
 import {episodeService} from "../../../services";
 import {Episode} from "../Episode/Episode";
+import css from './Episodes.module.css'
+import {usePageQuery} from "../../../hooks";
 
 const Episodes = () => {
     const [episodesData, setEpisodesData] = useState({prev: null, next: null, results: []})
-
-    const {query, setQuery} = useSearchParams({page:'1'});
-    const page = query.get('page')
-
+const {page,prevPage,nextPage } = usePageQuery();
 
     useEffect(() => {
         episodeService.getAll(page).then(({data}) => setEpisodesData(() => {
@@ -22,11 +21,18 @@ const Episodes = () => {
             })
         )
     }, [page]);
+
+
     return (
+
         <div>
-            {episodesData.results.map(episode => <Episode key={episode.id} episode={episode}/>)}
-            <button>prev</button>
-            <button>next</button>
+            <div className={css.Episodes}>
+                {episodesData.results.map(episode => <Episode key={episode.id} episode={episode}/>)}
+            </div>
+            <div className={css.buttons}>
+                <button disabled={!episodesData.prev} onClick={prevPage}>prev</button>
+                <button disabled={!episodesData.next} onClick={nextPage}>next</button>
+            </div>
         </div>
     );
 };
